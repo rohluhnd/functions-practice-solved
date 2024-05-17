@@ -16,8 +16,15 @@
 
 // Your code goes here...
 
-
-
+function doesArrayIncludeItemsBetweenVals(arr, val1, val2) {
+  for (let elem in arr) {
+    if (arr[elem] > val1 && arr[elem] < val2) {
+      return true;
+    }
+  }
+  return false;
+}
+doesArrayIncludeItemsBetweenVals([2, 4, 2], 5, 10);
 
 /**
  * ====================================================
@@ -27,29 +34,57 @@
  * Arrow Function name: getValueWithConditionTwo;
  * Variable name for the function expression: getValueWithConditionThree;
  * All three functions resolve the same task:
-    * The function takes two numbers as arguments
-    * If the numbers are both equal to 40, return the sum of them
-    * Else return the doubled sum of them
+ * The function takes two numbers as arguments
+ * If the numbers are both equal to 40, return the sum of them
+ * Else return the doubled sum of them
  * getValueWithConditionOne(40, 40) => 80;
  * getValueWithConditionOne(20, 30) => 100;
  */
 
 // Your code goes here...
+function getValueWithConditionOne(num1, num2) {
+  if (num1 === 40 && num2 === 40) {
+    let sum = num1 + num2;
+    return sum;
+  } else {
+    let sum = (num1 + num2) * 2;
+    return sum;
+  }
+}
+getValueWithConditionOne(20, 30);
 
+const getValueWithConditionTwo = (num1, num2) => {
+  if (num1 === 40 && num2 === 40) {
+    let sum = num1 + num2;
+    return sum;
+  } else {
+    let sum = (num1 + num2) * 2;
+    return sum;
+  }
+};
+getValueWithConditionTwo(20, 30);
 
-
-
+const getValueWithConditionThree = function (num1, num2) {
+  if (num1 === 40 && num2 === 40) {
+    let sum = num1 + num2;
+    return sum;
+  } else {
+    let sum = (num1 + num2) * 2;
+    return sum;
+  }
+};
+getValueWithConditionThree(20, 30);
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
 
-
 // Do not delete or change the lines beneath
 const f = {
-  doesArrayIncludeItemsBetweenVals: doesArrayIncludeItemsBetweenVals || undefined,
+  doesArrayIncludeItemsBetweenVals:
+    doesArrayIncludeItemsBetweenVals || undefined,
   getValueWithConditionOne: getValueWithConditionOne || undefined,
   getValueWithConditionTwo: getValueWithConditionTwo || undefined,
   getValueWithConditionThree: getValueWithConditionThree || undefined,
-}
+};
 export { f };
